@@ -1,2 +1,7 @@
-2a.
-2b.
+2a. I got 6.34 FPS with CPU batching, 6.17 with GPU batching, and 5.34 unbatched.
+I took the median of the last four readings in each 600-frame run (1280x720, Debug, Mesa llvmpipe).
+One GPU draw for 10,000 particles and the cursor beat individual draws by about 15%.
+
+2b. I'd give each sprite's six vertices the same clip-space z, smaller for closer layers.
+Clear the depth buffer each frame and enable GL_DEPTH_TEST with GL_LESS so the nearest opaque fragment wins.
+Draw translucent particles last with depth writes off so they still blend.

@@ -184,15 +184,17 @@ int main() {
         }
 
         // UNCOMMENT THIS ONCE YOU'RE WORKING ON "Batched rendering (part 2)"
-        // glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-        // spriteManager.drawGL();
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+        spriteManager.drawGL();
         // DOWN TO HERE
 
         // COMMENT THIS BLOCK ONCE YOU'RE WORKING ON "Batched rendering (part 2)"
+#if 0
         window.clear(sf::Color::Black);
         sf::RenderStates states{};
         states.blendMode = sf::BlendAdd;
         spriteManager.draw(window, states);
+#endif
         // DOWN TO HERE
 
         window.display();
